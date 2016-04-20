@@ -32,7 +32,6 @@ public class RelevantXkcdCommand {
             allTranscripts.add(words);
         }
 
-
         for (Xkcd x : xkcdList) {
             List<String> words = Arrays.asList(x.getTranscript().replaceAll("[\\W&&[^\\s]]", "").split("\\W+"));
             double confidence = relevanceCalculator.getXkcdRelevance(words, allTranscripts, searchTerm);
@@ -40,13 +39,12 @@ public class RelevantXkcdCommand {
             confidenceMap.put(x, confidence);
         }
 
-
         // xkcd with the highest confidence is our winner
         Xkcd mostRelevant = Collections.max(confidenceMap.entrySet(), (x1, x2) -> x1.getValue().compareTo(x2.getValue())).getKey();
         return mostRelevant;
     }
 
-    // testing only - TODO remove main
+    // testing only - TODO remove main after creating the API
     // compile from top level directory with javac -cp "src/" src/commands/RelevantXkcdCommand.java
     // run from top level directory with java -cp src commands.RelevantXkcdCommand
     public static void main(String[] args) {

@@ -14,8 +14,11 @@ public class Xkcd {
     // transcript text
     private String transcript;
 
-    // url to
+    // image url
     private String imageUrl;
+
+    // text on the comic
+    private String altText;
 
     public String getAltText() {
         return altText;
@@ -24,9 +27,6 @@ public class Xkcd {
     public void setAltText(String altText) {
         this.altText = altText;
     }
-
-    // text on the comic
-    private String altText;
 
     public int getNumber() {
         return number;
@@ -63,11 +63,11 @@ public class Xkcd {
     @Override
     public String toString() {
         return "Xkcd {" +
-                "number=" + number +
-                ", title='" + title + '\'' +
-                ", transcript='" + transcript + '\'' +
-                ", imageUrl='" + imageUrl + '\'' +
-                ", altText='" + altText + '\'' +
+                "number =" + number +
+                ", title ='" + title + '\'' +
+                ", transcript ='" + transcript + '\'' +
+                ", imageUrl ='" + imageUrl + '\'' +
+                ", altText ='" + altText + '\'' +
                 '}';
     }
 }

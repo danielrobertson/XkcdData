@@ -3,4 +3,4 @@ create database xkcddata;
 use xkcddata;
 
 -- create Xkcd table
-create table xkcd (number BIGINT, title VARCHAR(255), image_url VARCHAR(255), transcript TEXT, alt TEXT);
+create table xkcd (number BIGINT not null, title VARCHAR(255), image_url VARCHAR(255), transcript TEXT, alt TEXT, primary key (number));

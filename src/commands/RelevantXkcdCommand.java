@@ -5,7 +5,6 @@ import data.XkcdDao;
 import search.RelevanceCalculator;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Searches all Xkcd comics for the most relevant to a search term

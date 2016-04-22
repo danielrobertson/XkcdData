@@ -24,7 +24,7 @@ public class RelevanceCalculator {
     /**
      * Calculates the term frequency
      *
-     * @param workingSet  list of strings
+     * @param workingSet list of strings
      * @param term String represents a term
      * @return term frequency of term in working set
      */

@@ -2,6 +2,8 @@ package commands;
 
 import beans.Xkcd;
 import data.XkcdDao;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import search.RelevanceCalculator;
 
 import java.util.*;
@@ -10,6 +12,9 @@ import java.util.*;
  * Searches all Xkcd comics for the most relevant to a search term
  */
 public class RelevantXkcdCommand {
+
+    // logger
+    private static Log log = LogFactory.getLog(RelevantXkcdCommand.class);
 
     /**
      * Determines and returns the most relevant Xkcd comic for the given search term
@@ -34,7 +39,7 @@ public class RelevantXkcdCommand {
         for (Xkcd x : xkcdList) {
             List<String> words = Arrays.asList(x.getTranscript().replaceAll("[\\W&&[^\\s]]", "").split("\\W+"));
             double confidence = relevanceCalculator.getXkcdRelevance(words, allTranscripts, searchTerm);
-            System.out.println(x.getTitle() + " confidence - " + confidence);
+            log.info("Confidence scores - " + x.getTitle() + " : " + confidence);
             confidenceMap.put(x, confidence);
         }
 
@@ -47,7 +52,7 @@ public class RelevantXkcdCommand {
     // compile from top level directory with javac -cp "src/" src/commands/RelevantXkcdCommand.java
     // run from top level directory with java -cp src commands.RelevantXkcdCommand
     public static void main(String[] args) {
-        System.out.println("Most relevant is \n" + getRelevantXkcd("beach"));
+        System.out.println("Most relevant is \n" + getRelevantXkcd("earth"));
     }
 
 }

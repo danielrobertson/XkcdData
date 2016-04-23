@@ -14,6 +14,7 @@ import java.util.Map;
  */
 public class XkcdDao {
 
+    // log
     private static Log log = LogFactory.getLog(XkcdDao.class);
 
     /**
@@ -24,17 +25,30 @@ public class XkcdDao {
     public List<Xkcd> retrieveAllComics() {
         List<Xkcd> xkcdList = new ArrayList<>();
 
-        // TODO access database to pull all xkcd's.. for now two hard coded xkcd's
-        Xkcd a = new Xkcd();
-        a.setTitle("Planespotting");
-        a.setTranscript("No, a hydroplane doesn't land on water--that's an aquaplane. A hydroplane is a plane that gets electric power from an onboard water reservoir with a tiny dam and turbines. No, a hydroplane doesn't land on water--that's an aquaplane. A hydroplane is a plane that gets electric power from an onboard water reservoir with a tiny dam and turbines.");
+        Connection connection;
+        try {
+            Map<String, String> environment = System.getenv();
+            connection = DriverManager.getConnection(environment.get("DB_PATH"), environment.get("DB_USER"), environment.get("DB_PASSWORD"));
 
-        Xkcd b = new Xkcd();
-        b.setTitle("Dating Service");
-        b.setTranscript("Hi, my name is Randall. I like candlelight dinners and long walks on the beach. When I say long walks on teh beach, I mean LONG walks on the beach. I've met people through these services who claim to like long walks on the beach. But we'll be out there barely an hour before they start in with 'I'm tired' and 'don't you think it's time we head back?' Bring a TENT.");
+            String sql = "select number, title, image_url, transcript, alt from xkcd";
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
-        xkcdList.add(a);
-        xkcdList.add(b);
+            while (resultSet.next()) {
+                Xkcd xkcd = new Xkcd();
+                xkcd.setNum(resultSet.getInt("number"));
+                xkcd.setTitle(resultSet.getString("title"));
+                xkcd.setImg(resultSet.getString("image_url"));
+                xkcd.setTranscript(resultSet.getString("transcript"));
+                xkcd.setAlt(resultSet.getString("alt"));
+
+                xkcdList.add(xkcd);
+            }
+        }
+        catch (SQLException e) {
+            log.error("Failed to retrieve comics ");
+            e.printStackTrace();
+        }
 
         return xkcdList;
     }

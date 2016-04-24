@@ -1,6 +1,6 @@
-package data;
+package main.java.data;
 
-import beans.Xkcd;
+import main.java.beans.Xkcd;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Database access object for querying the xkcd data database
+ * Database access object for querying the xkcd main.java.data database
  */
 public class XkcdDao {
 

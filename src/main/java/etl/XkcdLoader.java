@@ -1,9 +1,9 @@
-package etl;
+package main.java.etl;
 
-import beans.Xkcd;
+import main.java.beans.Xkcd;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import data.XkcdDao;
+import main.java.data.XkcdDao;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.HttpEntity;

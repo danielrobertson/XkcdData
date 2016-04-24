@@ -1,10 +1,10 @@
-package commands;
+package main.java.commands;
 
-import beans.Xkcd;
-import data.XkcdDao;
+import main.java.beans.Xkcd;
+import main.java.data.XkcdDao;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import search.RelevanceCalculator;
+import main.java.search.RelevanceCalculator;
 
 import java.util.*;
 
@@ -49,8 +49,6 @@ public class RelevantXkcdCommand {
     }
 
     // testing only - TODO remove main after creating the API
-    // compile from top level directory with javac -cp "src/" src/commands/RelevantXkcdCommand.java
-    // run from top level directory with java -cp src commands.RelevantXkcdCommand
     public static void main(String[] args) {
         System.out.println("Most relevant is \n" + getRelevantXkcd("earth"));
     }

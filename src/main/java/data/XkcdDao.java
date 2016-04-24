@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Database access object for querying the xkcd main.java.data database
+ * Database access object for querying the xkcd data database
  */
 public class XkcdDao {
 

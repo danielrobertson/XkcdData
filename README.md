@@ -12,10 +12,10 @@ This project is in development.
 
 ### MySQL
 - Set environment variables DB_PATH, DB_USER, and DB_PASSWORD
-- Create a new database and switch to it
+- Create a new database and switch to it  
   ```create database xkcddata;
   use xkcddata;```
-- Create a new schema 
+- Create a new schema   
 `create table xkcd (number BIGINT not null, title VARCHAR(255), image_url VARCHAR(255), transcript TEXT, alt TEXT, primary key (number));`
 
 ### Build and Run 

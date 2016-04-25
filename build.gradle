@@ -11,6 +11,12 @@ dependencies {
     compile 'org.apache.httpcomponents:httpcore:4.4.4'
     compile 'com.google.code.gson:gson:2.6.2'
     compile 'mysql:mysql-connector-java:6.0.2'
+    compile 'org.glassfish.jersey.core:jersey-client:2.22.2'
+    compile 'org.glassfish.jersey.core:jersey-common:2.22.2'
+    compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.22.2'
+    compile 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.22.2'
+    compile 'org.glassfish.jersey.media:jersey-media-jaxb:2.22.2'
+    compile 'org.glassfish.jersey.core:jersey-server:2.22.2'
 }
 
 task loadXkcdData(type: JavaExec) {

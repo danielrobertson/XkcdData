@@ -19,6 +19,12 @@ This project is in development.
 `create table xkcd (number BIGINT not null, title VARCHAR(255), image_url VARCHAR(255), transcript TEXT, alt TEXT, primary key (number));`
 
 ### Build and Run 
-- `gradle tasks` to view a list of available tasks. 
-- `gradle build` to build the project 
-- `gradle loadXkcdData -PRange="['40', '50']"` to load Xkcd comics numbers 40 through 50 inclusive into the database 
+
+# ETL tool 
+`gradle build` 
+`gradle loadXkcdData -PRange="['40', '50']"` to load Xkcd comics numbers 40 through 50 inclusive into the database 
+
+# API 
+`gradle build`  
+`gradle war`  
+`sudo gradle deployTomcat`  

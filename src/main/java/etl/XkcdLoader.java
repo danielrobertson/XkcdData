@@ -4,13 +4,15 @@ import beans.Xkcd;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import data.XkcdDao;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
-import org.apache.log4j.Logger;
+
 
 import java.io.IOException;
 
@@ -20,8 +22,7 @@ import java.io.IOException;
 public class XkcdLoader {
 
     // logger
-    private static Logger log = Logger.getLogger(XkcdLoader.class);
-
+    private static Log log = LogFactory.getLog(XkcdLoader.class);
     /**
      * Accepts user input and then loads the specific range of Xkcd comics
      *

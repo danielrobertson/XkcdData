@@ -1,7 +1,8 @@
 package data;
 
 import beans.Xkcd;
-import org.apache.log4j.Logger;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -14,7 +15,7 @@ import java.util.Map;
 public class XkcdDao {
 
     // log
-    private Logger log = Logger.getLogger(XkcdDao.class);
+    private static Log log = LogFactory.getLog(XkcdDao.class);
 
     /**
      * Retrieve all Xkcd comics in the database

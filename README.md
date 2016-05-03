@@ -18,7 +18,7 @@ This project is in development.
 - Create a new schema   
 `create table xkcd (number BIGINT not null, title VARCHAR(255), image_url VARCHAR(255), transcript TEXT, alt TEXT, primary key (number));`
 
-# Build and Run 
+## Build and Run 
 ### ETL tool 
 Build  
 `gradle build`  

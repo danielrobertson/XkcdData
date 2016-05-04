@@ -4,10 +4,10 @@ A RESTful wrapper for Xkcd comics that pulls data from [Xkcd](http://xkcd.com) a
 This project is in development.
 
 ## Usage
-Search for a relevant Xkcd comic
+Search for a relevant Xkcd comic  
 http://104.236.3.239:8080/xkcddata/api/relevant/query/{query-text}
 
-Load Xkcd comics in range N to M inclusive
+Load Xkcd comics in range N to M inclusive  
 http://104.236.3.239:8080/xkcddata/api/load/begin/{N}/end/{M}
 
 ## Developer Environment Setup

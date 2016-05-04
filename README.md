@@ -9,6 +9,7 @@ This project is in development.
 - Java 8 
 - Gradle 
 - MySQL
+- Update CATALINA_HOME in deploy.sh
 
 ### MySQL
 - Set environment variables DB_PATH, DB_USER, and DB_PASSWORD

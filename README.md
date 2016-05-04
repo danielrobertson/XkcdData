@@ -5,10 +5,10 @@ This project is in development.
 
 ## Usage
 Search for a relevant Xkcd comic
-/xkcddata/api/relevant/query/earth
+http://104.236.3.239:8080/xkcddata/api/relevant/query/{query-text}
 
 Load Xkcd comics in range N to M inclusive
-/xkcddata/api/load/begin/N/end/M
+http://104.236.3.239:8080/xkcddata/api/load/begin/{N}/end/{M}
 
 ## Developer Environment Setup
 

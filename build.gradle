@@ -25,18 +25,6 @@ dependencies {
     compile 'org.glassfish.jersey.core:jersey-server:2.22.2'
 }
 
-
-// Usage: gradle loadXkcdData -PRange="['40', '50']"
-task loadXkcdData(type: JavaExec) {
-    if (project.hasProperty("Range")) {
-        args Eval.me(Range)
-    }
-    main = 'main.java.etl.XkcdLoader'
-    classpath = sourceSets.main.runtimeClasspath
-}
-
-
-
 task deployTomcat(type: Exec) {
     commandLine './deploy.sh'
 }

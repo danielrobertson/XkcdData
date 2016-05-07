@@ -28,6 +28,7 @@ public class XkcdDao {
         Connection connection;
         try {
             Map<String, String> environment = System.getenv();
+            Class.forName("com.mysql.cj.jdbc.Driver").newInstance();
             connection = DriverManager.getConnection(environment.get("DB_PATH"), environment.get("DB_USER"), environment.get("DB_PASSWORD"));
 
             String sql = "select number, title, image_url, transcript, alt from xkcd";
@@ -47,6 +48,12 @@ public class XkcdDao {
         }
         catch (SQLException e) {
             log.error("Failed to retrieve comics ");
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
 

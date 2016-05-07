@@ -46,7 +46,7 @@ public class XkcdDataResource {
     @POST
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response loadXkcdComicsInRange(@PathParam("begin") final Integer begin, @PathParam("begin") final Integer end) {
+    public Response loadXkcdComicsInRange(@PathParam("begin") final Integer begin, @PathParam("end") final Integer end) {
         Object response = "Loading comics in range " + begin + " : " + end;
         return Response.status(200).entity(response).type("text/plain").build();
     }

@@ -1,16 +1,9 @@
-<<<<<<< HEAD
 *.DS_Store
-/.gradle/
-gradle/
-/.idea/
-/build/
-/out/
-*.iml
-=======
 *.class
 .idea/*
 lib/*
 out/
 .gradle/
+gradle/
 build/*
->>>>>>> 2332149cf913138280c31b8fe7014f4e327c0b04
+*.iml

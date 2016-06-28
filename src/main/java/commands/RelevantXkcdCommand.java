@@ -46,7 +46,19 @@ public class RelevantXkcdCommand {
         log.info("Confidence map - \n" + confidenceMap.toString());
 
         // xkcd with the highest confidence is our winner
-        Xkcd mostRelevant = Collections.max(confidenceMap.entrySet(), (x1, x2) -> x1.getValue().compareTo(x2.getValue())).getKey();
+        Xkcd mostRelevant = new Xkcd();
+        Map.Entry<Xkcd, Double> maxEntry = null;
+        for (Map.Entry<Xkcd, Double> entry : confidenceMap.entrySet())
+        {
+            if (maxEntry == null || entry.getValue().compareTo(maxEntry.getValue()) > 0)
+            {
+                maxEntry = entry;
+            }
+        }
+
+        if (maxEntry != null) {
+            mostRelevant = maxEntry.getKey();
+        }
         return mostRelevant;
     }
 }

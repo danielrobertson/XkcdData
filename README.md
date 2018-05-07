@@ -4,11 +4,11 @@ A RESTful wrapper for Xkcd comics that pulls data from [Xkcd](http://xkcd.com) a
 This project is in development.
 
 ## Usage
-Search for a relevant Xkcd comic for "earth"  
-http://104.236.3.239:8080/xkcddata/api/relevant/query/earth
+Search for a relevant Xkcd comic with a search keyword, e.g. "earth"  
+/xkcddata/api/relevant/query/earth
 
-Load Xkcd comics in range 1670 to 1675 inclusive  
-http://104.236.3.239:8080/xkcddata/api/load/begin/1670/end/1675
+Batch environment loads Xkcd comics by their IDs, e.g. 1670 to 1675 inclusive  
+/xkcddata/api/load/begin/1670/end/1675
 
 ## Developer Environment
 ### Prerequisites

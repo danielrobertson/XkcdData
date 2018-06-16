@@ -1,0 +1,25 @@
+{
+  "name": "xkcd-data",
+  "version": "1.0.0",
+  "description": "A React.js UI, Node.js REST API, and ETL app that allows users to search for relevant [Xkcd](http://xkcd.com) comics.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danielrobertson/xkcd-data.git"
+  },
+  "author": "danielrobertson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danielrobertson/xkcd-data/issues"
+  },
+  "homepage": "https://github.com/danielrobertson/xkcd-data#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "firebase-admin": "^5.12.1",
+    "rss-watcher": "^1.3.0",
+    "winston": "^3.0.0"
+  }
+}

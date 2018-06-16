@@ -12,3 +12,7 @@ GET /xkcddata/api/relevant/query/earth
 
 Batch environment loads Xkcd comics by their IDs, e.g. 1670 to 1675 inclusive  
 POST /xkcddata/api/load/begin/1670/end/1675
+
+## Developers 
+
+

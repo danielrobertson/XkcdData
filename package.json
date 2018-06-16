@@ -5,7 +5,7 @@
     "A React.js UI, Node.js REST API, and ETL app that allows users to search for relevant Xkcd comics.",
   "main": "server.js",
   "scripts": {
-    "start": "node rssListener.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,37 +1,14 @@
 # XkcdData
-A RESTful wrapper for Xkcd comics that pulls data from [Xkcd](http://xkcd.com) and exposes it as a REST API.
+A React.js UI, Java REST API, and ETL app that allows users to search for relevant [Xkcd](http://xkcd.com) comics.  
 
 This project is in development.
 
 ## Usage
+
+Coming soon 
+
 Search for a relevant Xkcd comic with a search keyword, e.g. "earth"  
 GET /xkcddata/api/relevant/query/earth
 
 Batch environment loads Xkcd comics by their IDs, e.g. 1670 to 1675 inclusive  
 POST /xkcddata/api/load/begin/1670/end/1675
-
-## Developer Environment
-### Prerequisites
-- Java 8
-- Gradle
-- MySQL
-- Tomcat 8
-- Update CATALINA_HOME in deploy.sh
-
-### Database
-- Set environment variables DB_PATH, DB_USER, and DB_PASSWORD  
-- Create a new database and switch to it  
-  ```create database xkcddata;  
-  use xkcddata;```
-- Create a new schema  
-`create table xkcd (number BIGINT not null, title VARCHAR(255), image_url VARCHAR(255), transcript TEXT, alt TEXT, primary key (number));`
-
-### Build and Run
-- Build  
-`gradle build`
-
-- Deploy  
-`gradle deployTomcat`
-
-- Log file is $CATALINA_HOME/conf/catalina.out
-

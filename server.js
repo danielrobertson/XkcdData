@@ -19,8 +19,8 @@ watcher.start();
 
 // search endpoint for UI
 app.get("/search", (req, res) => {
-  const keyword = req.query.keyword;
-  console.log(keyword);
+  const keyword = req.query.q;
+  console.log("search with keyword - %s", keyword);
 
   // todo dynamically return best match comic
   const comic = {

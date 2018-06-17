@@ -17,6 +17,15 @@ watcher.on("new entries", entries => {
 // start watching the feed.
 watcher.start();
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
+
 // search endpoint for UI
 app.get("/search", (req, res) => {
   const keyword = req.query.q;

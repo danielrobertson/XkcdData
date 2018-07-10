@@ -14,3 +14,4 @@ package-lock.json
 .firebaserc
 .gcloudignore
 firebase.json
+appbase

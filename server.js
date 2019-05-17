@@ -1,9 +1,8 @@
 const express = require("express");
 const Watcher = require("feed-watcher"),
-  feed = "https://xkcd.com/rss.xml",
+  feed = "http://lorem-rss.herokuapp.com/feed?unit=second&interval=5",// "https://xkcd.com/rss.xml",
   interval = 15; // seconds
 
-//feed = "http://lorem-rss.herokuapp.com/feed?unit=second&interval=5",
 const app = express();
 
 // update elastic search with new comic 
@@ -20,18 +19,13 @@ watcher.on("new entries", entries => {
 // start watching the feed.
 watcher.start();
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-});
+// alive endpoint 
+app.get("/", (req, res) => {
+  res.send("Alive");
+})
 
-// Start the server
+// // Start the server
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-  console.log(`App listening on port ${PORT}`);
-  console.log("Press Ctrl+C to quit.");
+  console.log(`Xkcd-data listening on port ${PORT}`);
 });

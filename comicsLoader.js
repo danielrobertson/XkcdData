@@ -8,12 +8,16 @@ loadComicsInRange(start, end);
  * Get comics JSON from range start to end (inclusive)
  * according to the property `num` from the Xkcd API
  */
-function loadComicsInRange(start, end) {
+const loadComicsInRange = (start, end) => {
   for (let id = start; id <= end; id++) {
+    if(id === 404) {
+      continue; 
+    }
+
     const url = `https://xkcd.com/${id}/info.0.json`;
     axios
       .get(url)
-      .then(function(response) {
+      .then((response) => {
         const comic = response.data;
         console.log(JSON.stringify(comic) + ",");
       })
